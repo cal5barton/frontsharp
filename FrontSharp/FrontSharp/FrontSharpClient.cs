@@ -18,18 +18,18 @@ namespace FrontSharp
         private string _baseUrl;
         private string _token;
 
-        public ICommentLogic Comments { get; }
+        
 
-        public FrontSharpClient()
+        public FrontSharpClient() : this(ConfigurationManager.AppSettings["FrontAPIEndpoint"].ToString(),ConfigurationManager.AppSettings["FrontAPIToken"].ToString())
         {
-            _baseUrl = ConfigurationManager.AppSettings["FrontAPIEndpoint"].ToString();
-            _token = ConfigurationManager.AppSettings["FrontAPIToken"].ToString();
+            
         }
 
         public FrontSharpClient(string baseUrl, string token)
         {
             this._baseUrl = baseUrl;
             this._token = token;
+            this.Comments = new CommentLogic(this);
         }
 
         //Sets RestSharp to use JSON.Net for Deserialization
@@ -69,5 +69,7 @@ namespace FrontSharp
             }
             return response.Data;
         }
+
+        public ICommentLogic Comments { get; private set; }
     }
 }
