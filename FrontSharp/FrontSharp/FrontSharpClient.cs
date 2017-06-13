@@ -37,12 +37,10 @@ namespace FrontSharp
         {
             var client = new RestClient(baseUrl);
 
+            client.ClearHandlers();
+
             // Override with Newtonsoft JSON Handler
             client.AddHandler("application/json", NewtonsoftJsonSerializer.Default);
-            client.AddHandler("text/json", NewtonsoftJsonSerializer.Default);
-            client.AddHandler("text/x-json", NewtonsoftJsonSerializer.Default);
-            client.AddHandler("text/javascript", NewtonsoftJsonSerializer.Default);
-            client.AddHandler("*+json", NewtonsoftJsonSerializer.Default);
 
             return client;
         }
@@ -52,6 +50,7 @@ namespace FrontSharp
             //Set Defaults for request
             request.RequestFormat = DataFormat.Json;
             request.JsonSerializer = serializer != null ? serializer : NewtonsoftJsonSerializer.Default;
+            request.AddHeader("Content-Type", "application/json");
             if (objToBeSerialized != null) request.AddJsonBody(objToBeSerialized);
 
             var client = CreateClient(_baseUrl);

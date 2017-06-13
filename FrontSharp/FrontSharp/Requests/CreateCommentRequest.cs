@@ -9,7 +9,7 @@ namespace FrontSharp.Requests
 {
     public class CreateCommentRequest
     {
-        [JsonProperty("authorId")]
+        [JsonProperty("author_Id")]
         public string AuthorId { get; set; }
         [JsonProperty("body")]
         public string Body { get; set; }
