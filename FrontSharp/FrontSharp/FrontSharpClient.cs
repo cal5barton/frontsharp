@@ -30,6 +30,7 @@ namespace FrontSharp
             this._baseUrl = baseUrl;
             this._token = token;
             this.Comments = new CommentLogic(this);
+            this.Tags = new TagLogic(this);
         }
 
         //Sets RestSharp to use JSON.Net for Deserialization
@@ -70,5 +71,6 @@ namespace FrontSharp
         }
 
         public ICommentLogic Comments { get; private set; }
+        public ITagLogic Tags { get; private set; }
     }
 }
