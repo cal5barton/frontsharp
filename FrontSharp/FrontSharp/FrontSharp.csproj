@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="FrontSharpClient.cs" />
     <Compile Include="Interfaces\ICommentLogic.cs" />
+    <Compile Include="Interfaces\ITagLogic.cs" />
+    <Compile Include="Logic\TagLogic.cs" />
     <Compile Include="Models\Assignee.cs" />
     <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\Author.cs" />
