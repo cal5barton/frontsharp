@@ -19,16 +19,12 @@ namespace FrontSharp.Logic
 
         public Tag CreateTag(string name)
         {
-            var request = new RestRequest();
-            request.Resource = _baseRoute;
-            request.Method = Method.POST;
+            var request = base.BuildRequest(Method.POST);
 
             //Create anonymous object with data. API returning failure response unless this is anonymous for whatever reason
             var obj = new { name = name};
 
-            var response = _client.Execute<Tag>(request, obj);
-
-            return response;
+            return _client.Execute<Tag>(request, obj);
         }
     }
 }

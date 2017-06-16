@@ -18,5 +18,13 @@ namespace FrontSharp.Logic
             _client = client;
         }
 
+        protected RestRequest BuildRequest(Method httpMethod = Method.GET)
+        {
+            var request = new RestRequest();
+            request.Resource = _baseRoute;
+            request.Method = httpMethod;
+
+            return request;
+        }
     }
 }

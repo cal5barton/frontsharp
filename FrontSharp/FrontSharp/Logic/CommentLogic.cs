@@ -20,17 +20,13 @@ namespace FrontSharp.Logic
 
         public Comment Create(string conversationId, CreateCommentRequest comment)
         {
-            var request = new RestRequest();
-            request.Resource = _baseRoute;
+            var request = base.BuildRequest(Method.POST);
             request.AddParameter("conversationId", conversationId, ParameterType.UrlSegment);
-            request.Method = Method.POST;
 
             //Create anonymous object with data. API returning failure response unless this is anonymous for whatever reason
             var obj = new { author_id = comment.AuthorId, body = comment.Body }; 
 
-            var response = _client.Execute<Comment>(request, obj);
-
-            return response;
+            return _client.Execute<Comment>(request, obj);
         }
     }
 }
