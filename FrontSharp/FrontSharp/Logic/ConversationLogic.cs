@@ -39,5 +39,18 @@ namespace FrontSharp.Logic
 
             _client.Execute<Conversation>(request, obj);
         }
+
+
+        public ListResult<Message> ListMessages(string conversationId, int? page = null, int? limit = null)
+        {
+            var request = base.BuildRequest();
+            request.Resource += "/{conversationId}/messages";
+            request.AddParameter("conversationId", conversationId, ParameterType.UrlSegment);
+
+            if (page != null) request.AddParameter("page", page, ParameterType.QueryString);
+            if (limit != null) request.AddParameter("limit", limit > 100 ? 100 : limit, ParameterType.QueryString);
+
+            return _client.Execute<ListResult<Message>>(request);
+        }
     }
 }

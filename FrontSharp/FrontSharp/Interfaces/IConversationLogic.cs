@@ -12,5 +12,6 @@ namespace FrontSharp.Interfaces
     {
         Conversation Get(string conversationId);
         void Update(string conversationId, UpdateConversationRequest updateConversation);
+        ListResult<Message> ListMessages(string conversationId, int? page = null, int? limit = null);
     }
 }

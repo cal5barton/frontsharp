@@ -59,6 +59,7 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Conversation.cs" />
+    <Compile Include="Models\ListResult.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Metadata.cs" />
     <Compile Include="Models\Recipient.cs" />
