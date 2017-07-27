@@ -31,6 +31,7 @@ namespace FrontSharp
             this._token = token;
             this.Comments = new CommentLogic(this);
             this.Conversations = new ConversationLogic(this);
+            this.Messages = new MessageLogic(this);
             this.Tags = new TagLogic(this);
         }
 
@@ -73,6 +74,7 @@ namespace FrontSharp
 
         public ICommentLogic Comments { get; private set; }
         public IConversationLogic Conversations { get; private set; }
+        public IMessageLogic Messages { get; private set; }
         public ITagLogic Tags { get; private set; }
     }
 }

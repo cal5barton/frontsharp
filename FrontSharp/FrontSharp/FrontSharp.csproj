@@ -51,14 +51,17 @@
     <Compile Include="FrontSharpClient.cs" />
     <Compile Include="Interfaces\ICommentLogic.cs" />
     <Compile Include="Interfaces\IConversationLogic.cs" />
+    <Compile Include="Interfaces\IMessageLogic.cs" />
     <Compile Include="Interfaces\ITagLogic.cs" />
     <Compile Include="Logic\ConversationLogic.cs" />
+    <Compile Include="Logic\MessageLogic.cs" />
     <Compile Include="Logic\TagLogic.cs" />
     <Compile Include="Models\Assignee.cs" />
     <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Conversation.cs" />
+    <Compile Include="Models\ImportMessageResponse.cs" />
     <Compile Include="Models\ListResult.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Metadata.cs" />
@@ -70,7 +73,8 @@
     <Compile Include="Logic\BaseLogic.cs" />
     <Compile Include="Logic\CommentLogic.cs" />
     <Compile Include="Requests\CommentRequests.cs" />
-    <Compile Include="Requests\ConverstationRequests.cs" />
+    <Compile Include="Requests\ConversationRequests.cs" />
+    <Compile Include="Requests\MessageRequests.cs" />
     <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
