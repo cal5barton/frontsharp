@@ -23,10 +23,7 @@ namespace FrontSharp.Logic
             var request = base.BuildRequest(Method.POST);
             request.AddParameter("conversationId", conversationId, ParameterType.UrlSegment);
 
-            //Create anonymous object with data. API returning failure response unless this is anonymous for whatever reason
-            var obj = new { author_id = comment.AuthorId, body = comment.Body }; 
-
-            return _client.Execute<Comment>(request, obj);
+            return _client.Execute<Comment>(request, comment);
         }
     }
 }

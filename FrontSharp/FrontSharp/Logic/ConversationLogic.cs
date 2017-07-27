@@ -33,11 +33,7 @@ namespace FrontSharp.Logic
             request.Resource += "/{conversationId}";
             request.AddParameter("conversationId", conversationId, ParameterType.UrlSegment);
 
-
-            //Create anonymous object with data. API returning failure response unless this is anonymous for whatever reason
-            var obj = new { assignee_id = updateConversation.AssigneeId, inbox_id = updateConversation.InboxId, status = updateConversation.Status, tags = updateConversation.Tags }; 
-
-            _client.Execute<Conversation>(request, obj);
+            _client.Execute<Conversation>(request, updateConversation);
         }
 
 
