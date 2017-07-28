@@ -48,5 +48,22 @@ namespace FrontSharp.Logic
 
             return _client.Execute<ListResult<Message>>(request);
         }
+
+        public ListResult<Conversation> List(List<ConversationStatus> statusFilter = null, int? page = null, int? limit = null)
+        {
+            var request = base.BuildRequest();
+            if(statusFilter != null && statusFilter.Count() > 0)
+            {
+                foreach(var filter in statusFilter)
+                {
+                    request.AddParameter("q[statuses][]", filter.ToString().ToLower(), ParameterType.QueryString);
+                }
+            }
+
+            if (page != null) request.AddParameter("page", page, ParameterType.QueryString);
+            if (limit != null) request.AddParameter("limit", limit > 100 ? 100 : limit, ParameterType.QueryString);
+
+            return _client.Execute<ListResult<Conversation>>(request);
+        }
     }
 }

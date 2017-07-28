@@ -19,4 +19,13 @@ namespace FrontSharp.Models
         public Message last_message { get; set; }
         public float created_at { get; set; }
     }
+
+    public enum ConversationStatus
+    {
+        Archived,
+        Assigned,
+        Deleted,
+        Open,
+        Spam
+    }
 }
