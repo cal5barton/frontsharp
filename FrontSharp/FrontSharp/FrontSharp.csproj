@@ -51,9 +51,11 @@
     <Compile Include="FrontSharpClient.cs" />
     <Compile Include="Interfaces\ICommentLogic.cs" />
     <Compile Include="Interfaces\IConversationLogic.cs" />
+    <Compile Include="Interfaces\IInboxLogic.cs" />
     <Compile Include="Interfaces\IMessageLogic.cs" />
     <Compile Include="Interfaces\ITagLogic.cs" />
     <Compile Include="Logic\ConversationLogic.cs" />
+    <Compile Include="Logic\InboxLogic.cs" />
     <Compile Include="Logic\MessageLogic.cs" />
     <Compile Include="Logic\TagLogic.cs" />
     <Compile Include="Models\Assignee.cs" />
@@ -69,7 +71,9 @@
     <Compile Include="Models\Recipient.cs" />
     <Compile Include="Models\Related.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\Teammate.cs" />
     <Compile Include="Models\_Links.cs" />
+    <Compile Include="Models\_Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logic\BaseLogic.cs" />
     <Compile Include="Logic\CommentLogic.cs" />
