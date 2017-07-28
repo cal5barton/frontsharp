@@ -13,6 +13,7 @@ namespace FrontSharp.Interfaces
         ListResult<Conversation> List(List<ConversationStatus> statusFilter = null, int? page = null, int? limit = null);
         Conversation Get(string conversationId);
         void Update(string conversationId, UpdateConversationRequest updateConversation);
+        ListResult<Inbox> ListInboxes(string conversationId);
         ListResult<Message> ListMessages(string conversationId, int? page = null, int? limit = null);
     }
 }

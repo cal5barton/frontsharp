@@ -65,5 +65,15 @@ namespace FrontSharp.Logic
 
             return _client.Execute<ListResult<Conversation>>(request);
         }
+
+
+        public ListResult<Inbox> ListInboxes(string conversationId)
+        {
+            var request = base.BuildRequest();
+            request.Resource += "/{conversationId}/inboxes";
+            request.AddParameter("conversationId", conversationId, ParameterType.UrlSegment);
+
+            return _client.Execute<ListResult<Inbox>>(request);
+        }
     }
 }
