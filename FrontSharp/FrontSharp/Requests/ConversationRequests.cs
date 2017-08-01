@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,20 @@ namespace FrontSharp.Requests
         [JsonProperty("inbox_id")]
         public string InboxId { get; set; }
 
+        [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("status")]
-        public string Status { get; set; }
+        public ConversationStatus Status { get; set; }
 
         [JsonProperty("tags")]
         public List<string> Tags { get; set; }
+    }
+
+    public enum ConversationStatus
+    {
+        open,
+        archived,
+        deleted,
+        spam
     }
 
 }

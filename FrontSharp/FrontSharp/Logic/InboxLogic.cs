@@ -31,7 +31,7 @@ namespace FrontSharp.Logic
             return _client.Execute<Inbox>(request);
         }
 
-        public ListResult<Conversation> ListConversations(string inboxId, List<ConversationStatus> statusFilter = null, int? page = null, int? limit = null)
+        public ListResult<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null)
         {
             var request = base.BuildRequest();
             request.Resource += "/{inbox_id}/conversations";

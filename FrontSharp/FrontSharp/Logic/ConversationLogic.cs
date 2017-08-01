@@ -49,7 +49,7 @@ namespace FrontSharp.Logic
             return _client.Execute<ListResult<Message>>(request);
         }
 
-        public ListResult<Conversation> List(List<ConversationStatus> statusFilter = null, int? page = null, int? limit = null)
+        public ListResult<Conversation> List(List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null)
         {
             var request = base.BuildRequest();
             if(statusFilter != null && statusFilter.Count() > 0)

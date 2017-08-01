@@ -11,6 +11,6 @@ namespace FrontSharp.Interfaces
     {
         ListResult<Inbox> List();
         Inbox Get(string inboxId);
-        ListResult<Conversation> ListConversations(string inboxId, List<ConversationStatus> statusFilter = null, int? page = null, int? limit = null);
+        ListResult<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null);
     }
 }

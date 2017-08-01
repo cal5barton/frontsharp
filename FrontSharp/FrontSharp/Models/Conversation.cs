@@ -20,7 +20,7 @@ namespace FrontSharp.Models
         public float created_at { get; set; }
     }
 
-    public enum ConversationStatus
+    public enum ConversationStatusFilter
     {
         Archived,
         Assigned,

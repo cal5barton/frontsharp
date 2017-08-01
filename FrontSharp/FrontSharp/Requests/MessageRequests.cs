@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,12 @@ namespace FrontSharp.Requests
         public string Subject { get; set; }
         [JsonProperty("body")]
         public string Body { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("body_format")]
+        public BodyFormat BodyFormat { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("type")]
+        public Type Type { get; set; }
         [JsonProperty("external_id")]
         public string ExternalId { get; set; }
         [JsonProperty("created_at")]
@@ -32,6 +39,18 @@ namespace FrontSharp.Requests
         public object[] Attachments { get; set; }
         [JsonProperty("metadata")]
         public ImportMessageMetadata Metadata { get; set; }
+    }
+
+    public enum BodyFormat
+    {
+        markdown,
+        html
+    }
+
+    public enum Type
+    {
+        email,
+        sms
     }
 
     public class Sender
