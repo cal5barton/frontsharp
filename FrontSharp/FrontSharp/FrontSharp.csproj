@@ -50,10 +50,12 @@
   <ItemGroup>
     <Compile Include="FrontSharpClient.cs" />
     <Compile Include="Interfaces\ICommentLogic.cs" />
+    <Compile Include="Interfaces\IContactLogic.cs" />
     <Compile Include="Interfaces\IConversationLogic.cs" />
     <Compile Include="Interfaces\IInboxLogic.cs" />
     <Compile Include="Interfaces\IMessageLogic.cs" />
     <Compile Include="Interfaces\ITagLogic.cs" />
+    <Compile Include="Logic\ContactLogic.cs" />
     <Compile Include="Logic\ConversationLogic.cs" />
     <Compile Include="Logic\InboxLogic.cs" />
     <Compile Include="Logic\MessageLogic.cs" />
@@ -62,7 +64,10 @@
     <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Conversation.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Handle.cs" />
     <Compile Include="Models\ImportMessageResponse.cs" />
     <Compile Include="Models\Inbox.cs" />
     <Compile Include="Models\ListResult.cs" />

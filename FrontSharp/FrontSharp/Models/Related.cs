@@ -18,6 +18,7 @@ namespace FrontSharp.Models
         public string inboxes { get; set; }
         public string message_replied_to { get; set; }
         public string messages { get; set; }
+        public string notes { get; set; }
         public string teammates { get; set; }
     }
 }

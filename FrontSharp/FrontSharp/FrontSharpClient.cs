@@ -30,6 +30,7 @@ namespace FrontSharp
             this._baseUrl = baseUrl;
             this._token = token;
             this.Comments = new CommentLogic(this);
+            this.Contacts = new ContactLogic(this);
             this.Conversations = new ConversationLogic(this);
             this.Inboxes = new InboxLogic(this);
             this.Messages = new MessageLogic(this);
@@ -74,6 +75,7 @@ namespace FrontSharp
         }
 
         public ICommentLogic Comments { get; private set; }
+        public IContactLogic Contacts { get; private set; }
         public IConversationLogic Conversations { get; private set; }
         public IInboxLogic Inboxes { get; private set; }
         public IMessageLogic Messages { get; private set; }
