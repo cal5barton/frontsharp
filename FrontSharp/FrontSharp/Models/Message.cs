@@ -19,6 +19,6 @@ namespace FrontSharp.Models
         public string body { get; set; }
         public string text { get; set; }
         public List<Attachment> attachments { get; set; }
-        public Metadata metadata { get; set; }
+        public MessageMetadata metadata { get; set; }
     }
 }

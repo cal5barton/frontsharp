@@ -12,6 +12,6 @@ namespace FrontSharp.Models
         public string url { get; set; }
         public string content_type { get; set; }
         public int size { get; set; }
-        public Metadata metadata { get; set; }
+        public AttachmentMetadata metadata { get; set; }
     }
 }

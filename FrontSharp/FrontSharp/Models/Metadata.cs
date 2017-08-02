@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class Metadata
+    public class AttachmentMetadata
+    {
+        public bool is_inline { get; set; }
+        public string cid { get; set; }
+    }
+
+    public class MessageMetadata
     {
 
     }
