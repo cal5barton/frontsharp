@@ -49,12 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FrontSharpClient.cs" />
+    <Compile Include="Interfaces\IAttachmentLogic.cs" />
     <Compile Include="Interfaces\ICommentLogic.cs" />
     <Compile Include="Interfaces\IContactLogic.cs" />
     <Compile Include="Interfaces\IConversationLogic.cs" />
     <Compile Include="Interfaces\IInboxLogic.cs" />
     <Compile Include="Interfaces\IMessageLogic.cs" />
     <Compile Include="Interfaces\ITagLogic.cs" />
+    <Compile Include="Logic\AttachmentLogic.cs" />
     <Compile Include="Logic\ContactLogic.cs" />
     <Compile Include="Logic\ConversationLogic.cs" />
     <Compile Include="Logic\InboxLogic.cs" />

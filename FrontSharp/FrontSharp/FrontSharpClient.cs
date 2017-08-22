@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestSharp.Extensions;
 
 namespace FrontSharp
 {
@@ -19,6 +20,7 @@ namespace FrontSharp
         private string _token;
 
         
+        public string BaseUrl { get => _baseUrl; set => _baseUrl = value; }
 
         public FrontSharpClient() : this(ConfigurationManager.AppSettings["FrontAPIEndpoint"].ToString(),ConfigurationManager.AppSettings["FrontAPIToken"].ToString())
         {
@@ -27,8 +29,9 @@ namespace FrontSharp
 
         public FrontSharpClient(string baseUrl, string token)
         {
-            this._baseUrl = baseUrl;
+            this.BaseUrl = baseUrl;
             this._token = token;
+            this.Attachments = new AttachmentLogic(this);
             this.Comments = new CommentLogic(this);
             this.Contacts = new ContactLogic(this);
             this.Conversations = new ConversationLogic(this);
@@ -74,11 +77,32 @@ namespace FrontSharp
             return response.Data;
         }
 
+        public void DownloadData(RestRequest request, string path)
+        {
+            try
+            {
+                var client = CreateClient(_baseUrl);
+                client.Authenticator = new JwtAuthenticator(_token); // used on every request
+                request.RootElement = "";
+                client.DownloadData(request).SaveAs(path);
+            }
+            catch(Exception ex)
+            {
+                //Throw Error if Exception Occurred (Usually network issues)
+                const string message = "Error retrieving response.  Check inner details for more info.";
+                var webApiException = new ApplicationException(message, ex);
+                throw webApiException;
+            }
+
+        }
+
+        public IAttachmentLogic Attachments { get; private set; }
         public ICommentLogic Comments { get; private set; }
         public IContactLogic Contacts { get; private set; }
         public IConversationLogic Conversations { get; private set; }
         public IInboxLogic Inboxes { get; private set; }
         public IMessageLogic Messages { get; private set; }
         public ITagLogic Tags { get; private set; }
+        
     }
 }
