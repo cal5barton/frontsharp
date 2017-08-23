@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FrontSharp.Converters;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
@@ -35,10 +36,21 @@ namespace FrontSharp.Requests
         public double CreatedAt { get; set; }
         [JsonProperty("tags")]
         public List<string> Tags { get; set; }
-        [JsonProperty("attachments")]
-        public object[] Attachments { get; set; }
+        [JsonIgnore]
+        public List<AttachmentInfo> Attachments { get; set; }
         [JsonProperty("metadata")]
         public ImportMessageMetadata Metadata { get; set; }
+
+        public bool HasAttachments()
+        {
+            return this.Attachments != null && this.Attachments.Count() > 0;
+        }
+    }
+
+    [JsonConverter(typeof(MultipartRequestConverter))]
+    public class ImportMessageMultipartFormRequest : ImportMessageRequest
+    {
+
     }
 
     public enum BodyFormat
@@ -75,4 +87,16 @@ namespace FrontSharp.Requests
         public bool ShouldSkipRules { get; set; }
     }
 
+    public class AttachmentInfo
+    {
+        public string Name { get; set; }
+        public string Path { get; set; }
+        public string ContentType { get; set; }
+
+        public AttachmentInfo(string name, string path)
+        {
+            this.Name = name;
+            this.Path = path;
+        }
+    }
 }
