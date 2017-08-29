@@ -55,6 +55,11 @@ namespace FrontSharp.Converters
                                 }
                             }
                         }
+                        else if(property.PropertyType.IsEnum)
+                        {
+                            writer.WritePropertyName(propertyName);
+                            serializer.Serialize(writer, property.GetValue(value).ToString());
+                        }
                         else
                         {
                             foreach (var child in property.PropertyType.GetProperties())
