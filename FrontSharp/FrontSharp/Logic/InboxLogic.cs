@@ -16,10 +16,10 @@ namespace FrontSharp.Logic
             _baseRoute = "inboxes";
         }
 
-        public ListResult<Inbox> List()
+        public ListResultResponseBody<Inbox> List()
         {
             var request = base.BuildRequest();
-            return _client.Execute<ListResult<Inbox>>(request);
+            return _client.Execute<ListResultResponseBody<Inbox>>(request);
         }
 
         public Inbox Get(string inboxId)
@@ -31,7 +31,7 @@ namespace FrontSharp.Logic
             return _client.Execute<Inbox>(request);
         }
 
-        public ListResult<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null)
+        public ListResultResponseBody<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null)
         {
             var request = base.BuildRequest();
             request.Resource += "/{inbox_id}/conversations";
@@ -47,7 +47,7 @@ namespace FrontSharp.Logic
             if (page != null) request.AddParameter("page", page, ParameterType.QueryString);
             if (limit != null) request.AddParameter("limit", limit > 100 ? 100 : limit, ParameterType.QueryString);
 
-            return _client.Execute<ListResult<Conversation>>(request);
+            return _client.Execute<ListResultResponseBody<Conversation>>(request);
         }
     }
 }

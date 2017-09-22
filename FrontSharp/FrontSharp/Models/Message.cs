@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class Message
+    public class Message : BaseResponseBody
     {
-        public _Links _links { get; set; }
         public string id { get; set; }
         public string type { get; set; }
         public bool is_inbound { get; set; }

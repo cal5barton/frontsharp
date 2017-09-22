@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace FrontSharp.Models
 {
 
-    public class Teammate
+    public class Teammate : BaseResponseBody
     {
-        public _Links _links { get; set; }
         public string id { get; set; }
         public string email { get; set; }
         public string username { get; set; }

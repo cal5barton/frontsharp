@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class ListResult<T> where T : class
+    public class BaseResponseBody
     {
-        public _Pagination _pagination { get; set; }
         public _Links _links { get; set; }
-        public List<T> _results { get; set; }
+        public _Error _error { get; set; }
     }
 }

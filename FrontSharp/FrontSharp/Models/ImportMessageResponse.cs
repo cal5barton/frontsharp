@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class ImportMessageResponse
+    public class ImportMessageResponse : BaseResponseBody
     {
         public string conversation_reference { get; set; }
     }

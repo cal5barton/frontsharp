@@ -77,13 +77,15 @@
     <Compile Include="Models\Handle.cs" />
     <Compile Include="Models\ImportMessageResponse.cs" />
     <Compile Include="Models\Inbox.cs" />
-    <Compile Include="Models\ListResult.cs" />
+    <Compile Include="Models\ListResultResponseBody.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Metadata.cs" />
     <Compile Include="Models\Recipient.cs" />
     <Compile Include="Models\Related.cs" />
+    <Compile Include="Models\BaseResponseBody.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Teammate.cs" />
+    <Compile Include="Models\_Error.cs" />
     <Compile Include="Models\_Links.cs" />
     <Compile Include="Models\_Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

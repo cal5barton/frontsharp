@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class Comment
+    public class Comment : BaseResponseBody
     {
-        public _Links _links { get; set; }
         public string id { get; set; }
         public Author author { get; set; }
         public string body { get; set; }

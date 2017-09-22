@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class Inbox
+    public class Inbox : BaseResponseBody
     {
-        public _Links _links { get; set; }
         public string id { get; set; }
         public string address { get; set; }
         public string type { get; set; }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class Tag
+    public class Tag : BaseResponseBody
     {
-        public _Links _links { get; set; }
         public string id { get; set; }
         public string name { get; set; }
     }

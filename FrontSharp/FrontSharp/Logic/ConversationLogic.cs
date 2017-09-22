@@ -37,7 +37,7 @@ namespace FrontSharp.Logic
         }
 
 
-        public ListResult<Message> ListMessages(string conversationId, int? page = null, int? limit = null)
+        public ListResultResponseBody<Message> ListMessages(string conversationId, int? page = null, int? limit = null)
         {
             var request = base.BuildRequest();
             request.Resource += "/{conversationId}/messages";
@@ -46,10 +46,10 @@ namespace FrontSharp.Logic
             if (page != null) request.AddParameter("page", page, ParameterType.QueryString);
             if (limit != null) request.AddParameter("limit", limit > 100 ? 100 : limit, ParameterType.QueryString);
 
-            return _client.Execute<ListResult<Message>>(request);
+            return _client.Execute<ListResultResponseBody<Message>>(request);
         }
 
-        public ListResult<Conversation> List(List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null)
+        public ListResultResponseBody<Conversation> List(List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null)
         {
             var request = base.BuildRequest();
             if(statusFilter != null && statusFilter.Count() > 0)
@@ -63,17 +63,17 @@ namespace FrontSharp.Logic
             if (page != null) request.AddParameter("page", page, ParameterType.QueryString);
             if (limit != null) request.AddParameter("limit", limit > 100 ? 100 : limit, ParameterType.QueryString);
 
-            return _client.Execute<ListResult<Conversation>>(request);
+            return _client.Execute<ListResultResponseBody<Conversation>>(request);
         }
 
 
-        public ListResult<Inbox> ListInboxes(string conversationId)
+        public ListResultResponseBody<Inbox> ListInboxes(string conversationId)
         {
             var request = base.BuildRequest();
             request.Resource += "/{conversationId}/inboxes";
             request.AddParameter("conversationId", conversationId, ParameterType.UrlSegment);
 
-            return _client.Execute<ListResult<Inbox>>(request);
+            return _client.Execute<ListResultResponseBody<Inbox>>(request);
         }
     }
 }

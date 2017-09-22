@@ -10,10 +10,10 @@ namespace FrontSharp.Interfaces
 {
     public interface IConversationLogic
     {
-        ListResult<Conversation> List(List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null);
+        ListResultResponseBody<Conversation> List(List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null);
         Conversation Get(string conversationId);
         void Update(string conversationId, UpdateConversationRequest updateConversation);
-        ListResult<Inbox> ListInboxes(string conversationId);
-        ListResult<Message> ListMessages(string conversationId, int? page = null, int? limit = null);
+        ListResultResponseBody<Inbox> ListInboxes(string conversationId);
+        ListResultResponseBody<Message> ListMessages(string conversationId, int? page = null, int? limit = null);
     }
 }

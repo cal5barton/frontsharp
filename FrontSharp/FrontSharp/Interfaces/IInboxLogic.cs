@@ -9,8 +9,8 @@ namespace FrontSharp.Interfaces
 {
     public interface IInboxLogic
     {
-        ListResult<Inbox> List();
+        ListResultResponseBody<Inbox> List();
         Inbox Get(string inboxId);
-        ListResult<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null);
+        ListResultResponseBody<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null);
     }
 }
