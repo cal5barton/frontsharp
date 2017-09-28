@@ -31,7 +31,7 @@ namespace FrontSharp.Logic
             return _client.Execute<Inbox>(request);
         }
 
-        public ListResultResponseBody<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null, int? page = null, int? limit = null)
+        public ListResultResponseBody<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null, int? page_token = null, int? limit = null)
         {
             var request = base.BuildRequest();
             request.Resource += "/{inbox_id}/conversations";
@@ -44,7 +44,7 @@ namespace FrontSharp.Logic
                 }
             }
 
-            if (page != null) request.AddParameter("page", page, ParameterType.QueryString);
+            if (page_token != null) request.AddParameter("page_token", page_token, ParameterType.QueryString);
             if (limit != null) request.AddParameter("limit", limit > 100 ? 100 : limit, ParameterType.QueryString);
 
             return _client.Execute<ListResultResponseBody<Conversation>>(request);

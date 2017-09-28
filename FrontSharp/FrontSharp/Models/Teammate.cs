@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-
     public class Teammate : BaseResponseBody
     {
         public string id { get; set; }

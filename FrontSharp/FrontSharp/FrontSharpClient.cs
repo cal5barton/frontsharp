@@ -42,6 +42,7 @@ namespace FrontSharp
             this.Inboxes = new InboxLogic(this);
             this.Messages = new MessageLogic(this);
             this.Tags = new TagLogic(this);
+            this.Teammates = new TeammateLogic(this);
         }
 
         //Sets RestSharp to use JSON.Net for Deserialization
@@ -107,6 +108,7 @@ namespace FrontSharp
         public IInboxLogic Inboxes { get; private set; }
         public IMessageLogic Messages { get; private set; }
         public ITagLogic Tags { get; private set; }
+        public ITeammateLogic Teammates { get; private set; }
         
     }
 }
