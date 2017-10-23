@@ -39,6 +39,7 @@ namespace FrontSharp
             this.Comments = new CommentLogic(this);
             this.Contacts = new ContactLogic(this);
             this.Conversations = new ConversationLogic(this);
+            this.Events = new EventLogic(this);
             this.Inboxes = new InboxLogic(this);
             this.Messages = new MessageLogic(this);
             this.Tags = new TagLogic(this);
@@ -105,6 +106,7 @@ namespace FrontSharp
         public ICommentLogic Comments { get; private set; }
         public IContactLogic Contacts { get; private set; }
         public IConversationLogic Conversations { get; private set; }
+        public IEventLogic Events { get; private set; }
         public IInboxLogic Inboxes { get; private set; }
         public IMessageLogic Messages { get; private set; }
         public ITagLogic Tags { get; private set; }

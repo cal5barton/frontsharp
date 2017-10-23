@@ -53,17 +53,20 @@
   <ItemGroup>
     <Compile Include="Converters\MultipartRequestConverter.cs" />
     <Compile Include="FrontSharpClient.cs" />
+    <Compile Include="Helpers\DateTimeExtensions.cs" />
     <Compile Include="Interfaces\IAttachmentLogic.cs" />
     <Compile Include="Interfaces\ICommentLogic.cs" />
     <Compile Include="Interfaces\IContactLogic.cs" />
     <Compile Include="Interfaces\IConversationLogic.cs" />
     <Compile Include="Interfaces\IInboxLogic.cs" />
     <Compile Include="Interfaces\IMessageLogic.cs" />
+    <Compile Include="Interfaces\IEventLogic.cs" />
     <Compile Include="Interfaces\ITagLogic.cs" />
     <Compile Include="Interfaces\ITeammateLogic.cs" />
     <Compile Include="Logic\AttachmentLogic.cs" />
     <Compile Include="Logic\ContactLogic.cs" />
     <Compile Include="Logic\ConversationLogic.cs" />
+    <Compile Include="Logic\EventLogic.cs" />
     <Compile Include="Logic\InboxLogic.cs" />
     <Compile Include="Logic\MessageLogic.cs" />
     <Compile Include="Logic\TagLogic.cs" />
@@ -74,6 +77,8 @@
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Conversation.cs" />
+    <Compile Include="Models\Data.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\Handle.cs" />
     <Compile Include="Models\ImportMessageResponse.cs" />
@@ -84,7 +89,9 @@
     <Compile Include="Models\Recipient.cs" />
     <Compile Include="Models\Related.cs" />
     <Compile Include="Models\BaseResponseBody.cs" />
+    <Compile Include="Models\Source.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\Target.cs" />
     <Compile Include="Models\Teammate.cs" />
     <Compile Include="Models\_Error.cs" />
     <Compile Include="Models\_Links.cs" />
@@ -97,6 +104,7 @@
     <Compile Include="Requests\MessageRequests.cs" />
     <Compile Include="Requests\TeammateRequests.cs" />
     <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
+    <Compile Include="Converters\SingleOrArrayConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

@@ -16,4 +16,9 @@ namespace FrontSharp.Models
     {
 
     }
+
+    public class SourceTargetMetadata
+    {
+        public string type { get; set; }
+    }
 }
