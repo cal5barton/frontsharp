@@ -8,7 +8,7 @@ namespace FrontSharp.Models
 {
     public class BaseResponseBody
     {
-        public _Links _links { get; set; }
-        public _Error _error { get; set; }
+        public Links _links { get; set; }
+        public Error _error { get; set; }
     }
 }

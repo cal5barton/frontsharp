@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class _Error
+    public class Error
     {
         [JsonProperty("status")]
         public int HttpStatusCode { get; set; }

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class _Links
+    public class Pagination
     {
-        public string self { get; set; }
-        public Related related { get; set; }
+        public string prev { get; set; }
+        public string next { get; set; }
     }
-
 }

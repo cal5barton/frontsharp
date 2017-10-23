@@ -9,14 +9,14 @@ namespace FrontSharp.Models
 {
     public class ListResultResponseBody<T> where T : class
     {
-        private List<_Error> _listOfErrors = new List<_Error>();
-        public _Pagination _pagination { get; set; }
-        public _Links _links { get; set; }
+        private List<Error> _listOfErrors = new List<Error>();
+        public Pagination _pagination { get; set; }
+        public Links _links { get; set; }
         public List<T> _results { get; set; }
-        public List<_Error> _errors { get { return _listOfErrors; } set { _listOfErrors = value; } }
+        public List<Error> _errors { get { return _listOfErrors; } set { _listOfErrors = value; } }
 
         [JsonProperty("_error")]
-        private _Error _error { set { _listOfErrors.Add(value); } }
+        private Error _error { set { _listOfErrors.Add(value); } }
 
     }
 }
