@@ -188,4 +188,5 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 /FrontSharp/packages
-/FrontSharp/.vs/
+/.vs
+/FrontSharp/.vs
