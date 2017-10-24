@@ -26,7 +26,7 @@ namespace FrontSharp.Logic
             return _client.Execute<Event>(request);
         }
 
-        public ListResultResponseBody<Event> List(EventSearchParameters filter = null, int? page_token = null, int? limit = null)
+        public ListResultResponseBody<Event> List(EventSearchParameters filter = null,  int? limit = null)
         {
             var request = base.BuildRequest();
 
@@ -51,7 +51,6 @@ namespace FrontSharp.Logic
                 }
             }
 
-            if (page_token != null) request.AddParameter("page_token", page_token, ParameterType.QueryString);
             if (limit != null) request.AddParameter("limit", limit > 100 ? 100 : limit, ParameterType.QueryString);
 
             return _client.Execute<ListResultResponseBody<Event>>(request);

@@ -9,7 +9,7 @@ namespace FrontSharp.Interfaces
 {
     public interface IEventLogic
     {
-        ListResultResponseBody<Event> List(EventSearchParameters filter = null, int? page_token = null, int? limit = null);
+        ListResultResponseBody<Event> List(EventSearchParameters filter = null,  int? limit = null);
         Event Get(string eventId);
     }
 }

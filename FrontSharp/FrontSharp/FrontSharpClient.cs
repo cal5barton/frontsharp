@@ -83,6 +83,31 @@ namespace FrontSharp
             return response.Data;
         }
 
+        public T ExecuteURL<T>(string url, NewtonsoftJsonSerializer serializer = null) where T : new()
+        {
+            var request = new RestRequest();
+
+            //Set Defaults for request
+            request.RequestFormat = DataFormat.Json;
+            request.JsonSerializer = serializer != null ? serializer : NewtonsoftJsonSerializer.Default;
+            request.AddHeader("Content-Type", "application/json");
+
+            var client = CreateClient(url);
+            client.Authenticator = new JwtAuthenticator(_token); // used on every request
+            request.RootElement = "";
+
+            var response = client.Execute<T>(request);
+
+            //Throw Error if Exception Occurred (Usually network issues)
+            if (response.ErrorException != null)
+            {
+                const string message = "Error retrieving response.  Check inner details for more info.";
+                var webApiException = new ApplicationException(message, response.ErrorException);
+                throw webApiException;
+            }
+            return response.Data;
+        }
+
         public void DownloadData(RestRequest request, string path)
         {
             try
