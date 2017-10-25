@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using FrontSharp.Models;
 using RestSharp;
 using FrontSharp.Helpers;
+using FrontSharp.Requests;
 
 namespace FrontSharp.Logic
 {
@@ -42,12 +43,12 @@ namespace FrontSharp.Logic
 
                 if(filter.Before != null)
                 {
-                    request.AddParameter("q[before][]", filter.Before.ToTimestamp(), ParameterType.QueryString);
+                    request.AddParameter("q[before][]", filter.Before.Value.ToTimestamp(), ParameterType.QueryString);
                 }
 
                 if(filter.After != null)
                 {
-                    request.AddParameter("q[after][]", filter.After.ToTimestamp(), ParameterType.QueryString);
+                    request.AddParameter("q[after][]", filter.After.Value.ToTimestamp(), ParameterType.QueryString);
                 }
             }
 

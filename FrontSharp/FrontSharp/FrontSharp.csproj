@@ -101,6 +101,7 @@
     <Compile Include="Logic\CommentLogic.cs" />
     <Compile Include="Requests\CommentRequests.cs" />
     <Compile Include="Requests\ConversationRequests.cs" />
+    <Compile Include="Requests\EventRequests.cs" />
     <Compile Include="Requests\MessageRequests.cs" />
     <Compile Include="Requests\TeammateRequests.cs" />
     <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
