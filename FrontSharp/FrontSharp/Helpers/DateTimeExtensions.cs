@@ -12,6 +12,7 @@ namespace FrontSharp.Helpers
         
         public static long ToTimestamp(this DateTime value)
         {
+            value = value.ToUniversalTime();
             TimeSpan elapsedTime = value - Epoch;
             return (long)elapsedTime.TotalSeconds;
         }
