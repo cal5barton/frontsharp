@@ -17,6 +17,11 @@ namespace FrontSharp.Logic
             _baseRoute = "contacts";
         }
 
+        /// <summary>
+        /// Retrieve contact details for a given contact id
+        /// </summary>
+        /// <param name="contactId">The id reference for the contact</param>
+        /// <returns>Contact metadata</returns>
         public Contact Get(string contactId)
         {
             var request = base.BuildRequest();

@@ -18,6 +18,11 @@ namespace FrontSharp.Logic
             _baseRoute = "events";
         }
 
+        /// <summary>
+        /// Gets the full details of an event via the given event id
+        /// </summary>
+        /// <param name="eventId">The id of the requested event</param>
+        /// <returns>Event details</returns>
         public Event Get(string eventId)
         {
             var request = base.BuildRequest();
@@ -27,6 +32,12 @@ namespace FrontSharp.Logic
             return _client.Execute<Event>(request);
         }
 
+        /// <summary>
+        /// Lists all the detailed events which occured in the inboxes of your company ordered in reverse chronological order (newest first)
+        /// </summary>
+        /// <param name="filter">Filterable options to limit the results</param>
+        /// <param name="limit">The number of results to be retrieved (50 is the default, 100 is the max)</param>
+        /// <returns>A list response of the event results</returns>
         public ListResultResponseBody<Event> List(EventSearchParameters filter = null,  int? limit = null)
         {
             var request = base.BuildRequest();

@@ -17,6 +17,11 @@ namespace FrontSharp.Logic
             _baseRoute = "tags";
         }
 
+        /// <summary>
+        /// Creates a new tag
+        /// </summary>
+        /// <param name="name">The name of the tag to be created</param>
+        /// <returns>Created tag details</returns>
         public Tag CreateTag(string name)
         {
             var request = base.BuildRequest(Method.POST);

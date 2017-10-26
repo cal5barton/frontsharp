@@ -21,6 +21,12 @@ namespace FrontSharp.Logic
             _baseRoute = "messages/{message_id}";
         }
 
+        /// <summary>
+        /// Appends a new message into an inbox
+        /// </summary>
+        /// <param name="inboxId">The id of the requested inbox</param>
+        /// <param name="message">The details of the message to be imported</param>
+        /// <returns>The conversation reference to the newly created conversation</returns>
         public ImportMessageResponse ImportMessage(string inboxId, ImportMessageRequest message)
         {
             _baseRoute = "inboxes/{inbox_id}/imported_messages";
