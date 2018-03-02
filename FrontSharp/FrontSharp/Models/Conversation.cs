@@ -25,6 +25,7 @@ namespace FrontSharp.Models
         Assigned,
         Deleted,
         Open,
-        Spam
+        Spam,
+        Unassigned
     }
 }
