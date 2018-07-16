@@ -89,6 +89,7 @@
     <Compile Include="Models\Recipient.cs" />
     <Compile Include="Models\Related.cs" />
     <Compile Include="Models\BaseResponseBody.cs" />
+    <Compile Include="Models\SendReplyResponse.cs" />
     <Compile Include="Models\Source.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Target.cs" />
