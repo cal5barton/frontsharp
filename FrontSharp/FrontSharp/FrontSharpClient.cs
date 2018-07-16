@@ -1,17 +1,12 @@
 ﻿using FrontSharp.Interfaces;
 using FrontSharp.Logic;
-using FrontSharp.Requests;
+using FrontSharp.Mapping;
 using FrontSharp.Serializers;
 using RestSharp;
 using RestSharp.Authenticators;
+using RestSharp.Extensions;
 using System;
 using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RestSharp.Extensions;
-using FrontSharp.Mapping;
 
 namespace FrontSharp
 {
@@ -20,12 +15,10 @@ namespace FrontSharp
         private string _baseUrl;
         private string _token;
 
-        
         public string BaseUrl { get => _baseUrl; set => _baseUrl = value; }
 
-        public FrontSharpClient() : this(ConfigurationManager.AppSettings["FrontAPIEndpoint"].ToString(),ConfigurationManager.AppSettings["FrontAPIToken"].ToString())
+        public FrontSharpClient() : this(ConfigurationManager.AppSettings["FrontAPIEndpoint"].ToString(), ConfigurationManager.AppSettings["FrontAPIToken"].ToString())
         {
-            
         }
 
         public FrontSharpClient(string baseUrl, string token)
@@ -70,7 +63,7 @@ namespace FrontSharp
             var client = CreateClient(_baseUrl);
             client.Authenticator = new JwtAuthenticator(_token); // used on every request
             request.RootElement = "";
-            
+
             var response = client.Execute<T>(request);
 
             //Throw Error if Exception Occurred (Usually network issues)
@@ -117,14 +110,13 @@ namespace FrontSharp
                 request.RootElement = "";
                 client.DownloadData(request).SaveAs(path);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Throw Error if Exception Occurred (Usually network issues)
                 const string message = "Error retrieving response.  Check inner details for more info.";
                 var webApiException = new ApplicationException(message, ex);
                 throw webApiException;
             }
-
         }
 
         public IAttachmentLogic Attachments { get; private set; }
@@ -136,6 +128,5 @@ namespace FrontSharp
         public IMessageLogic Messages { get; private set; }
         public ITagLogic Tags { get; private set; }
         public ITeammateLogic Teammates { get; private set; }
-        
     }
 }

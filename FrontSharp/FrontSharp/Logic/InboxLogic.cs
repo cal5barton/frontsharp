@@ -1,11 +1,8 @@
 ﻿using FrontSharp.Interfaces;
 using FrontSharp.Models;
 using RestSharp;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FrontSharp.Logic
 {
@@ -47,7 +44,7 @@ namespace FrontSharp.Logic
         /// <param name="statusFilter">Filterable statuses to limit the results, defaults to all if no status is given</param>
         /// <param name="limit">The number of results to be retrieved (50 is the default, 100 is the max)</param>
         /// <returns></returns>
-        public ListResultResponseBody<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null,  int? limit = null)
+        public ListResultResponseBody<Conversation> ListConversations(string inboxId, List<ConversationStatusFilter> statusFilter = null, int? limit = null)
         {
             var request = base.BuildRequest();
             request.Resource += "/{inbox_id}/conversations";

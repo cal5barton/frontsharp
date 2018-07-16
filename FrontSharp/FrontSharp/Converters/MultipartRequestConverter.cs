@@ -1,11 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FrontSharp.Converters
 {
@@ -30,7 +27,7 @@ namespace FrontSharp.Converters
             {
                 var jsonIgnore = property.GetCustomAttribute<JsonIgnoreAttribute>() != null ? true : false;
 
-                if(!jsonIgnore)
+                if (!jsonIgnore)
                 {
                     var jsonProperty = property.GetCustomAttribute<JsonPropertyAttribute>();
                     var propertyName = jsonProperty?.PropertyName ?? property.Name;
@@ -55,7 +52,7 @@ namespace FrontSharp.Converters
                                 }
                             }
                         }
-                        else if(property.PropertyType.IsEnum)
+                        else if (property.PropertyType.IsEnum)
                         {
                             writer.WritePropertyName(propertyName);
                             serializer.Serialize(writer, property.GetValue(value).ToString());
@@ -76,15 +73,13 @@ namespace FrontSharp.Converters
                         }
                     }
                 }
-                
             }
-            writer.WriteEndObject();   
+            writer.WriteEndObject();
         }
 
         private bool IsNormal(PropertyInfo propertyInfo)
         {
             return (propertyInfo.PropertyType.IsPrimitive || propertyInfo.PropertyType.Name.ToLower() == "string");
         }
-        
     }
 }

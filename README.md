@@ -46,6 +46,7 @@ var client = new FrontSharpClient();
       * **List**
       * **ListConversations**
   * Messages
+      * **SendReply**
       * **ImportMessage**
   * Tags
       * **CreateTag**

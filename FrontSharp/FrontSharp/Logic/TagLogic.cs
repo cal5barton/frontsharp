@@ -1,11 +1,6 @@
 ﻿using FrontSharp.Interfaces;
 using FrontSharp.Models;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FrontSharp.Logic
 {
@@ -26,7 +21,7 @@ namespace FrontSharp.Logic
         {
             var request = base.BuildRequest(Method.POST);
 
-            var obj = new { name = name};
+            var obj = new { name = name };
 
             return _client.Execute<Tag>(request, obj);
         }
