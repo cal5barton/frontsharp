@@ -2,17 +2,13 @@
 using FrontSharp.Models;
 using FrontSharp.Requests;
 using RestSharp;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FrontSharp.Logic
 {
     public class ConversationLogic : BaseLogic, IConversationLogic
     {
-
         public ConversationLogic(FrontSharpClient client) : base(client)
         {
             _baseRoute = "conversations";
@@ -38,12 +34,12 @@ namespace FrontSharp.Logic
         /// <param name="statusFilter">Limits results to only the statuses given or all results if no filters are provided</param>
         /// <param name="limit">The number of results to be retrieved (50 is the default, 100 is the max)</param>
         /// <returns>A list response of the resulting conversations</returns>
-        public ListResultResponseBody<Conversation> List(List<ConversationStatusFilter> statusFilter = null,  int? limit = null)
+        public ListResultResponseBody<Conversation> List(List<ConversationStatusFilter> statusFilter = null, int? limit = null)
         {
             var request = base.BuildRequest();
-            if(statusFilter != null && statusFilter.Count() > 0)
+            if (statusFilter != null && statusFilter.Count() > 0)
             {
-                foreach(var filter in statusFilter)
+                foreach (var filter in statusFilter)
                 {
                     request.AddParameter("q[statuses][]", filter.ToString().ToLower(), ParameterType.QueryString);
                 }

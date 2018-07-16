@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FrontSharp.Models
+﻿namespace FrontSharp.Models
 {
     public class AttachmentMetadata
     {
@@ -14,7 +8,6 @@ namespace FrontSharp.Models
 
     public class MessageMetadata
     {
-
     }
 
     public class SourceTargetMetadata

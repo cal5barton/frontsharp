@@ -2,17 +2,11 @@
 using FrontSharp.Models;
 using FrontSharp.Requests;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FrontSharp.Logic
 {
     public class CommentLogic : BaseLogic, ICommentLogic
     {
-
         public CommentLogic(FrontSharpClient client) : base(client)
         {
             _baseRoute = "conversations/{conversationId}/comments";

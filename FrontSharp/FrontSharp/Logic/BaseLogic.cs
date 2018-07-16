@@ -1,10 +1,4 @@
-﻿using FrontSharp.Serializers;
-using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RestSharp;
 
 namespace FrontSharp.Logic
 {
@@ -12,7 +6,7 @@ namespace FrontSharp.Logic
     {
         protected FrontSharpClient _client;
         protected string _baseRoute;
-        
+
         public BaseLogic(FrontSharpClient client)
         {
             _client = client;

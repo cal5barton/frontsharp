@@ -1,18 +1,14 @@
 ﻿using FrontSharp.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FrontSharp.Models;
 using FrontSharp.Requests;
 using RestSharp;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace FrontSharp.Logic
 {
     public class TeammateLogic : BaseLogic, ITeammateLogic
     {
-
         public TeammateLogic(FrontSharpClient client) : base(client)
         {
             _baseRoute = "teammates";
@@ -49,7 +45,7 @@ namespace FrontSharp.Logic
         /// <param name="statusFilter">Limits results to only the statuses given or all results if no filters are provided</param>
         /// <param name="limit">The number of results to be retrieved (50 is the default, 100 is the max)</param>
         /// <returns>A list response of the resulting conversations according to the given teammate</returns>
-        public ListResultResponseBody<Conversation> ListConversations(string teammateId, List<ConversationStatusFilter> statusFilter = null,  int? limit = null)
+        public ListResultResponseBody<Conversation> ListConversations(string teammateId, List<ConversationStatusFilter> statusFilter = null, int? limit = null)
         {
             var request = base.BuildRequest();
             request.Resource += "/{teammateId}/conversations";

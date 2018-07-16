@@ -1,11 +1,7 @@
 ﻿using FrontSharp.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FrontSharp.Models;
 using RestSharp;
+using System;
 
 namespace FrontSharp.Logic
 {
@@ -13,9 +9,8 @@ namespace FrontSharp.Logic
     {
         public AttachmentLogic(FrontSharpClient client) : base(client)
         {
-            
         }
-        
+
         /// <summary>
         /// Download the provided attachment from a message to a specified destination
         /// </summary>
@@ -29,7 +24,5 @@ namespace FrontSharp.Logic
 
             _client.DownloadData(request, path);
         }
-
-        
     }
 }
