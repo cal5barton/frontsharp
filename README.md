@@ -28,6 +28,9 @@ var client = new FrontSharpClient();
 * FrontSharpClient
   * Attachments
       * **Download**
+  * Channels
+      * **GetByAddress**
+      * **GetById**
   * Comments
       * **Create**
   * Contacts
