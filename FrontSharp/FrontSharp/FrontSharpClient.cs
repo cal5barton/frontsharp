@@ -29,6 +29,7 @@ namespace FrontSharp
             this.BaseUrl = baseUrl;
             this._token = token;
             this.Attachments = new AttachmentLogic(this);
+            this.Channels = new ChannelLogic(this);
             this.Comments = new CommentLogic(this);
             this.Contacts = new ContactLogic(this);
             this.Conversations = new ConversationLogic(this);
@@ -120,6 +121,7 @@ namespace FrontSharp
         }
 
         public IAttachmentLogic Attachments { get; private set; }
+        public IChannelLogic Channels { get; private set; }
         public ICommentLogic Comments { get; private set; }
         public IContactLogic Contacts { get; private set; }
         public IConversationLogic Conversations { get; private set; }
