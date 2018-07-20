@@ -9,6 +9,6 @@ namespace FrontSharp.Interfaces
 {
     public interface IChannelLogic
     {
-        Channel Get(string channelAddress);
+        Channel GetByAddress(string channelAddress);
     }
 }

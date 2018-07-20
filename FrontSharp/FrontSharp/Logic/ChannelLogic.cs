@@ -16,11 +16,20 @@ namespace FrontSharp.Logic
             _baseRoute = "channels";
         }
 
-        public Channel Get(string channelAddress)
+        public Channel GetByAddress(string channelAddress)
         {
-            var request = base.BuildRequest();
+            var request = BuildRequest();
             request.Resource += "/alt:address:{channelAddress}";
             request.AddParameter("channelAddress", channelAddress, ParameterType.UrlSegment);
+
+            return _client.Execute<Channel>(request);
+        }
+
+        public Channel GetById(string id)
+        {
+            var request = BuildRequest();
+            request.Resource += "/{id}";
+            request.AddParameter("id", id, ParameterType.UrlSegment);
 
             return _client.Execute<Channel>(request);
         }
