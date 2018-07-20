@@ -55,6 +55,7 @@
     <Compile Include="FrontSharpClient.cs" />
     <Compile Include="Helpers\DateTimeExtensions.cs" />
     <Compile Include="Interfaces\IAttachmentLogic.cs" />
+    <Compile Include="Interfaces\IChannelLogic.cs" />
     <Compile Include="Interfaces\ICommentLogic.cs" />
     <Compile Include="Interfaces\IContactLogic.cs" />
     <Compile Include="Interfaces\IConversationLogic.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Interfaces\ITagLogic.cs" />
     <Compile Include="Interfaces\ITeammateLogic.cs" />
     <Compile Include="Logic\AttachmentLogic.cs" />
+    <Compile Include="Logic\ChannelLogic.cs" />
     <Compile Include="Logic\ContactLogic.cs" />
     <Compile Include="Logic\ConversationLogic.cs" />
     <Compile Include="Logic\EventLogic.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Mapping\AutoMapperConfiguration.cs" />
     <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\Channel.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Conversation.cs" />
