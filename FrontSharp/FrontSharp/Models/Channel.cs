@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FrontSharp.Models
 {
-    public class Channel
+    public class Channel : BaseResponseBody
     {
         public string id { get; set; }
         public string address { get; set; }
