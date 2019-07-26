@@ -1,4 +1,4 @@
-# FrontSharp [![Build status](https://ci.appveyor.com/api/projects/status/7w3a3kweiu7gwgsc/branch/master?svg=true)](https://ci.appveyor.com/project/cal5fishbowl/frontsharp/branch/master)
+# FrontSharp [![Build Status](https://cal5barton.visualstudio.com/frontsharp/_apis/build/status/cal5barton.frontsharp?branchName=master)](https://cal5barton.visualstudio.com/frontsharp/_build/latest?definitionId=1&branchName=master) [![Deployement Status](https://cal5barton.vsrm.visualstudio.com/_apis/public/Release/badge/3ddd3b5d-f54b-4244-ab0e-4c40a3ebded7/1/1)](https://cal5barton.vsrm.visualstudio.com/_apis/public/Release/badge/3ddd3b5d-f54b-4244-ab0e-4c40a3ebded7/1/1)
 FrontSharp is a C# Wrapper that simplifies the ability to interface with the [FrontApp API](https://dev.frontapp.com/)
 
 ## Installation
