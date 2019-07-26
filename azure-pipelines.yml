@@ -38,3 +38,9 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.csproj'
     includeSymbols: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'frontsharp'
+    publishLocation: 'Container'
