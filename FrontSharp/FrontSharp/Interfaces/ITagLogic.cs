@@ -6,5 +6,6 @@ namespace FrontSharp.Interfaces
     {
         Tag CreateTag(string name);
         Tag DeleteTag(string id);
+        ListResultResponseBody<Tag> ListTags();
     }
 }

@@ -42,5 +42,15 @@ namespace FrontSharp.Logic
             return _client.Execute<Tag>(request);
         }
 
+        /// <summary>
+        /// List Tags
+        /// </summary>
+        /// <returns>Return a list of tags</returns>
+        public ListResultResponseBody<Tag> ListTags()
+        {
+            var request = base.BuildRequest(Method.GET);
+
+            return _client.Execute<ListResultResponseBody<Tag>>(request);
+        }
     }
 }
