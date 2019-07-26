@@ -25,5 +25,22 @@ namespace FrontSharp.Logic
 
             return _client.Execute<Tag>(request, obj);
         }
+
+
+        /// <summary>
+        /// Deletes a tag
+        /// </summary>
+        /// <param tagId="tagId">The tag id to be deleted</param>
+        /// <returns>Deleted tag details</returns>
+        public Tag DeleteTag(string tagId)
+        {
+            var request = base.BuildRequest(Method.DELETE);
+
+            request.Resource += "/{tag_id}";
+            request.AddParameter("tag_id", tagId, ParameterType.UrlSegment);
+
+            return _client.Execute<Tag>(request);
+        }
+
     }
 }
