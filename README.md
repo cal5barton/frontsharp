@@ -53,6 +53,8 @@ var client = new FrontSharpClient();
       * **ImportMessage**
   * Tags
       * **CreateTag**
+      * **DeleteTag**
+      * **ListTags**
   * Teammates
       * **Get**
       * **List**
