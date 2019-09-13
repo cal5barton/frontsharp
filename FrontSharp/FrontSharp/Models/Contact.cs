@@ -1,16 +1,33 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace FrontSharp.Models
 {
     public class Contact : BaseResponseBody
     {
-        public string id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public string avatar_url { get; set; }
-        public bool is_spammer { get; set; }
-        public List<string> links { get; set; }
-        public List<Handle> handles { get; set; }
-        public List<Group> groups { get; set; }
+
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("avatar_url")]
+        public string AvatarUrl { get; set; }
+
+        [JsonProperty("is_spammer")]
+        public bool IsSpammer { get; set; }
+
+        [JsonProperty("links")]
+        public List<string> Links { get; set; }
+
+        [JsonProperty("handles")]
+        public List<ContactHandle> Handles { get; set; }
+
+        [JsonProperty("groups")]
+        public List<Group> Groups { get; set; }
     }
 }

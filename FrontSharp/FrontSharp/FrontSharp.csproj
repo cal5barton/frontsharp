@@ -79,11 +79,11 @@
     <Compile Include="Models\Channel.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\ContactHandle.cs" />
     <Compile Include="Models\Conversation.cs" />
     <Compile Include="Models\Data.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Group.cs" />
-    <Compile Include="Models\Handle.cs" />
     <Compile Include="Models\ImportMessageResponse.cs" />
     <Compile Include="Models\Inbox.cs" />
     <Compile Include="Models\ListResultResponseBody.cs" />
@@ -92,6 +92,7 @@
     <Compile Include="Models\Recipient.cs" />
     <Compile Include="Models\Related.cs" />
     <Compile Include="Models\BaseResponseBody.cs" />
+    <Compile Include="Models\SendNewMessageResponse.cs" />
     <Compile Include="Models\SendReplyResponse.cs" />
     <Compile Include="Models\Source.cs" />
     <Compile Include="Models\Tag.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Logic\BaseLogic.cs" />
     <Compile Include="Logic\CommentLogic.cs" />
     <Compile Include="Requests\CommentRequests.cs" />
+    <Compile Include="Requests\ContactRequests.cs" />
     <Compile Include="Requests\ConversationRequests.cs" />
     <Compile Include="Requests\EventRequests.cs" />
     <Compile Include="Requests\MessageRequests.cs" />

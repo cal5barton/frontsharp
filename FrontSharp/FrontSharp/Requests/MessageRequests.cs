@@ -61,10 +61,10 @@ namespace FrontSharp.Requests
     }
 
     [JsonConverter(typeof(MultipartRequestConverter))]
-    public class SendReplyMultipartFormRequest : SendReplyRequest
+    public class SendNewMessageMultipartFormRequest : SendNewMessageRequest
     { }
 
-    public class SendReplyRequest
+    public class SendNewMessageRequest
     {
         [JsonProperty("author_id")]
         public string AuthorId { get; set; }
@@ -92,9 +92,6 @@ namespace FrontSharp.Requests
         [JsonProperty("options")]
         public Options Options { get; set; }
 
-        [JsonProperty("channel_id")]
-        public string ChannelId { get; set; }
-
         [JsonProperty("to")]
         public List<string> To { get; set; }
 
@@ -104,6 +101,17 @@ namespace FrontSharp.Requests
         [JsonProperty("bcc")]
         public List<string> Bcc { get; set; }
     }
+
+    [JsonConverter(typeof(MultipartRequestConverter))]
+    public class SendReplyMultipartFormRequest : SendReplyRequest
+    { }
+
+    public class SendReplyRequest : SendNewMessageRequest
+    {
+        [JsonProperty("channel_id")]
+        public string ChannelId { get; set; }
+    }
+
 
     public class Options
     {

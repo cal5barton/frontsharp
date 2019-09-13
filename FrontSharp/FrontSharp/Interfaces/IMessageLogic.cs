@@ -7,6 +7,8 @@ namespace FrontSharp.Interfaces
     {
         ImportMessageResponse ImportMessage(string inboxId, ImportMessageRequest message);
 
+        SendNewMessageResponse SendNewMessage(string channelId, SendNewMessageRequest message);
+
         SendReplyResponse SendReply(string conversationId, SendReplyRequest message);
     }
 }

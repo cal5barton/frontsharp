@@ -9,6 +9,8 @@ namespace FrontSharp.Interfaces
 {
     public interface IChannelLogic
     {
+        ListResultResponseBody<Channel> List(int? limit = null);
+
         Channel GetByAddress(string channelAddress);
     }
 }

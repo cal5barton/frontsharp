@@ -16,6 +16,14 @@ namespace FrontSharp.Logic
             _baseRoute = "channels";
         }
 
+        public ListResultResponseBody<Channel> List(int? limit = null)
+        {
+            var request = base.BuildRequest();
+            if (limit != null) request.AddParameter("limit", limit > 100 ? 100 : limit, ParameterType.QueryString);
+
+            return _client.Execute<ListResultResponseBody<Channel>>(request);
+        }
+
         public Channel GetByAddress(string channelAddress)
         {
             var request = BuildRequest();
