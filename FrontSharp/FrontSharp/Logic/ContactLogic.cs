@@ -14,8 +14,6 @@ namespace FrontSharp.Logic
 
         public ListResultResponseBody<Contact> List(string q = null, string page_token = null, int? limit = null, string sort_by = null, string sort_order = null)
         {
-            //?q={q}&page_token={page_token}&limit={limit}&sort_by={sort_by}&sort_order={sort_order}
-
             var request = base.BuildRequest();
             if (!string.IsNullOrEmpty(q)) request.AddParameter("q", q, ParameterType.QueryString);
             if (!string.IsNullOrEmpty(page_token)) request.AddParameter("page_token", page_token, ParameterType.QueryString);
