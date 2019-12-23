@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using FrontSharp.Interfaces;
+﻿using FrontSharp.Interfaces;
 using FrontSharp.Models;
 using FrontSharp.Requests;
 using Newtonsoft.Json;
@@ -32,7 +31,25 @@ namespace FrontSharp.Logic
 
             if (message.HasAttachments())
             {
-                var parameters = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(Mapper.Map<ImportMessageMultipartFormRequest>(message), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                // Manually map ImportMessageRequest to ImportMessageMultipartFormRequest (AutoMapper broke w 3.1 update)
+                ImportMessageMultipartFormRequest importMessageMultipartFormRequest = new ImportMessageMultipartFormRequest
+                {
+                    Sender = message.Sender,
+                    To = message.To,
+                    Cc = message.Cc,
+                    Bcc = message.Bcc,
+                    Subject = message.Subject,
+                    Body = message.Body,
+                    BodyFormat = message.BodyFormat,
+                    Type = message.Type,
+                    ExternalId = message.ExternalId,
+                    CreatedAt = message.CreatedAt,
+                    Tags = message.Tags,
+                    Attachments = message.Attachments,
+                    Metadata = message.Metadata,
+                };
+
+                var parameters = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(importMessageMultipartFormRequest, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                 foreach (var p in parameters)
                 {
                     request.AddParameter(p.Key.ToString(), p.Value);
@@ -63,7 +80,22 @@ namespace FrontSharp.Logic
 
             if (message.HasAttachments())
             {
-                var parameters = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(Mapper.Map<SendReplyMultipartFormRequest>(message), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                // Manually map SendReplyRequest to SendReplyMultipartFormRequest (AutoMapper broke w 3.1 update)
+                SendReplyMultipartFormRequest sendReplyMultipartFormRequest = new SendReplyMultipartFormRequest
+                {
+                    AuthorId = message.AuthorId,
+                    SenderName = message.SenderName,
+                    Subject = message.Subject,
+                    Body = message.Body,
+                    Text = message.Text,
+                    Attachments = message.Attachments,
+                    Options = message.Options,
+                    To = message.To,
+                    Cc = message.Cc,
+                    Bcc = message.Bcc,
+                };
+
+                var parameters = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(sendReplyMultipartFormRequest, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                 foreach (var p in parameters)
                 {
                     request.AddParameter(p.Key.ToString(), p.Value);
@@ -94,7 +126,22 @@ namespace FrontSharp.Logic
 
             if (message.HasAttachments())
             {
-                var parameters = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(Mapper.Map<SendReplyMultipartFormRequest>(message), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                // Manually map SendReplyRequest to SendReplyMultipartFormRequest (AutoMapper broke w 3.1 update)
+                SendReplyMultipartFormRequest sendReplyMultipartFormRequest = new SendReplyMultipartFormRequest
+                {
+                    AuthorId = message.AuthorId,
+                    SenderName = message.SenderName,
+                    Subject = message.Subject,
+                    Body = message.Body,
+                    Text = message.Text,
+                    Attachments = message.Attachments,
+                    Options = message.Options,
+                    To = message.To,
+                    Cc = message.Cc,
+                    Bcc = message.Bcc,
+                };
+
+                var parameters = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(sendReplyMultipartFormRequest, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                 foreach (var p in parameters)
                 {
                     request.AddParameter(p.Key.ToString(), p.Value);

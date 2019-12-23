@@ -1,6 +1,5 @@
 ﻿using FrontSharp.Interfaces;
 using FrontSharp.Logic;
-using FrontSharp.Mapping;
 using FrontSharp.Serializers;
 using RestSharp;
 using RestSharp.Authenticators;
@@ -23,9 +22,6 @@ namespace FrontSharp
 
         public FrontSharpClient(string baseUrl, string token)
         {
-            //Initialize Automapper
-            AutoMapperConfiguration.Configure();
-
             this.BaseUrl = baseUrl;
             this._token = token;
             this.Attachments = new AttachmentLogic(this);
