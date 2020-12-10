@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontSharp", "FrontSharp\FrontSharp.csproj", "{A37E0843-C526-4C03-8189-7A1F30B8154D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontAppAPI", "FrontAppAPI\FrontAppAPI.csproj", "{7AF1667B-073E-4FAC-BD3A-F114186261FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A37E0843-C526-4C03-8189-7A1F30B8154D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A37E0843-C526-4C03-8189-7A1F30B8154D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A37E0843-C526-4C03-8189-7A1F30B8154D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A37E0843-C526-4C03-8189-7A1F30B8154D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF1667B-073E-4FAC-BD3A-F114186261FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF1667B-073E-4FAC-BD3A-F114186261FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF1667B-073E-4FAC-BD3A-F114186261FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF1667B-073E-4FAC-BD3A-F114186261FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
