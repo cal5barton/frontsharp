@@ -1,6 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
+    <Title>FrontSharp</Title>
+    <Description>C# wrapper for FrontApp Api</Description>
+    <Company>cal5fishbowl, tokyo0709</Company>
+    <Product>FrontSharp</Product>
+    <Version>2.0.0.0</Version>
+    <Copyright>Copyright ©  2020</Copyright>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
